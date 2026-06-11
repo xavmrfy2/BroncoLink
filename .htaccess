@@ -1,0 +1,13 @@
+# Turn on the URL rewriting engine
+RewriteEngine On
+
+# Make sure we don't accidentally redirect real files (like your CSS or JS)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route clean URLs to your index.php router
+RewriteRule ^home$ index.php?page=home [L]
+RewriteRule ^planner$ index.php?page=planner [L]
+RewriteRule ^study$ index.php?page=study [L]
+RewriteRule ^events$ index.php?page=events [L]
+RewriteRule ^submit$ index.php?page=submit [L]

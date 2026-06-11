@@ -1,4 +1,4 @@
-/* BroncoLink — Dorm Room Planner styles */
+/* Phase 4: Dorm Room Planner */
 
 .planner-page {
   flex: 1;
@@ -31,7 +31,6 @@
   font-family: inherit;
   font-size: 0.875rem;
   max-width: 320px;
-  cursor: pointer;
 }
 
 .planner-controls button {
@@ -43,7 +42,6 @@
   font-family: inherit;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
 }
 
 .planner-controls button:hover {
@@ -76,7 +74,7 @@
   margin-top: 0.75rem;
 }
 
-/* Room container — size is set dynamically by planner.js */
+/* Room size is set dynamically in JS from real dimensions */
 #room-container {
   position: relative;
   margin: 0 auto;
@@ -89,7 +87,6 @@
   user-select: none;
 }
 
-/* Fixed room features (window / door) */
 .room-feature {
   position: absolute;
   pointer-events: none;
@@ -134,7 +131,6 @@
   white-space: nowrap;
 }
 
-/* Draggable furniture pieces */
 .furniture {
   position: absolute;
   display: flex;
@@ -151,7 +147,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
-/* Rotate button — injected by planner.js via addRotateControl() */
 .furniture__rotate {
   position: absolute;
   top: -9px;
@@ -183,16 +178,15 @@
   z-index: 10;
 }
 
+.furniture.bed { background-color: #7c2635; }
+.furniture.desk { background-color: #1e3a6b; }
+.furniture.chair { background-color: #2a5a5a; }
+.furniture.dresser { background-color: #2d5a2d; }
+.furniture.closet,
+.furniture.wardrobe { background-color: #5a3d1a; }
+.furniture.armoire { background-color: #4a3520; }
+.furniture.vanity { background-color: #3a4a5a; }
+
 .furniture.hidden {
   display: none;
 }
-
-/* Furniture type colors */
-.furniture.bed      { background-color: #7c2635; }
-.furniture.desk     { background-color: #1e3a6b; }
-.furniture.chair    { background-color: #2a5a5a; }
-.furniture.dresser  { background-color: #2d5a2d; }
-.furniture.closet,
-.furniture.wardrobe { background-color: #5a3d1a; }
-.furniture.armoire  { background-color: #4a3520; }
-.furniture.vanity   { background-color: #3a4a5a; }
