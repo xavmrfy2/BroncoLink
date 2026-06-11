@@ -1,1 +1,132 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BroncoLink — Submit</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.php?page=home" class="logo">
+      <span class="logo-icon" aria-hidden="true">B</span>
+      <span class="logo-text">Bronco<span class="logo-accent">Link</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.php?page=home">Home</a>
+      <a href="index.php?page=planner">Planner</a>
+      <a href="index.php?page=study">Study Groups</a>
+      <a href="index.php?page=events">Events</a>
+      <a href="index.php?page=submit" class="active">Submit</a>
+    </nav>
+  </header>
+
+  <main class="submit-page">
+
+    <h1 class="page-title">Submit a Post</h1>
+    <p class="page-desc">
+      Share an upcoming event or start a study group. Fill in the fields
+      that apply to your post type.
+    </p>
+
+    <form method="POST" action="index.php?page=submit" novalidate>
+
+      <!-- Post type -->
+      <div class="form-group">
+        <label for="type">Post Type</label>
+        <select id="type" name="type" required>
+          <option value="">-- Select a type --</option>
+          <option value="event">Event</option>
+          <option value="study_group">Study Group</option>
+        </select>
+      </div>
+
+      <hr class="form-divider">
+
+      <!-- Shared: title / group name -->
+      <div class="form-group">
+        <label for="title">Event Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          maxlength="120"
+          placeholder="e.g. Welcome Week BBQ"
+        >
+        <p class="form-hint">For study groups, leave this blank and fill in Class Name below.</p>
+      </div>
+
+      <!-- Study groups only -->
+      <div class="form-group">
+        <label for="class_name">Class Name</label>
+        <input
+          type="text"
+          id="class_name"
+          name="class_name"
+          maxlength="80"
+          placeholder="e.g. CSEN 161 — Web Engineering"
+        >
+        <p class="form-hint">Study groups only.</p>
+      </div>
+
+      <!-- Events only -->
+      <div class="form-group">
+        <label for="date">Event Date</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+        >
+        <p class="form-hint">Events only.</p>
+      </div>
+
+      <!-- Study groups only -->
+      <div class="form-group">
+        <label for="meeting_time">Meeting Time</label>
+        <input
+          type="text"
+          id="meeting_time"
+          name="meeting_time"
+          maxlength="80"
+          placeholder="e.g. Tuesdays 3:00 pm – 5:00 pm"
+        >
+        <p class="form-hint">Study groups only.</p>
+      </div>
+
+      <!-- Shared -->
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          maxlength="120"
+          placeholder="e.g. Library Room 201"
+        >
+      </div>
+
+      <!-- Shared -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          maxlength="600"
+          placeholder="Provide a short description..."
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Submit Post</button>
+
+    </form>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>BroncoLink &copy; 2026 &mdash; Santa Clara University</p>
+  </footer>
+
+</body>
+</html>

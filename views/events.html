@@ -1,1 +1,63 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BroncoLink — Events</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.php?page=home" class="logo">
+      <span class="logo-icon" aria-hidden="true">B</span>
+      <span class="logo-text">Bronco<span class="logo-accent">Link</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.php?page=home">Home</a>
+      <a href="index.php?page=planner">Planner</a>
+      <a href="index.php?page=study">Study Groups</a>
+      <a href="index.php?page=events" class="active">Events</a>
+      <a href="index.php?page=submit">Submit</a>
+    </nav>
+  </header>
+
+  <main class="listings-page">
+
+    <div class="listings-header">
+      <div>
+        <h1 class="page-title">Campus Events</h1>
+        <p class="page-desc">Upcoming events, activities, and community gatherings at SCU.</p>
+      </div>
+      <a href="index.php?page=submit" class="btn-post">+ Post an Event</a>
+    </div>
+
+    <section aria-label="Event listings">
+      <!--
+        PHP injection point — events.php replaces {{EVENT_LISTINGS}} with
+        one .listing-card article per row from the events table.
+
+        Card structure for each record:
+        <article class="listing-card">
+          <h2 class="card-title">{{title}}</h2>
+          <ul class="card-details">
+            <li><span class="detail-label">Date:</span> {{date}}</li>
+            <li><span class="detail-label">Location:</span> {{location}}</li>
+          </ul>
+          <p class="card-desc">{{description}}</p>
+        </article>
+      -->
+      <div class="listings-grid">
+        {{EVENT_LISTINGS}}
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>BroncoLink &copy; 2026 &mdash; Santa Clara University</p>
+  </footer>
+
+</body>
+</html>

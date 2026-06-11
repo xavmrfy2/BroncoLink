@@ -1,0 +1,201 @@
+/* BroncoLink — Submit form and listing card styles */
+
+/* ── Page layout ─────────────────────────────────────────────────── */
+
+.submit-page,
+.listings-page {
+  flex: 1;
+  padding: 3rem 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-desc {
+  font-size: 0.9375rem;
+  color: var(--scu-gray-mid);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* ── Form ────────────────────────────────────────────────────────── */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--scu-cream);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--scu-gray-dark);
+  color: var(--scu-cream);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  transition: border-color 0.15s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--scu-gray-mid);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--scu-red);
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a8585' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  padding-right: 2.25rem;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-hint {
+  font-size: 0.8125rem;
+  color: var(--scu-gray-mid);
+  margin-top: 0.375rem;
+}
+
+.form-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background: var(--scu-red);
+  color: var(--scu-cream-light);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-submit:hover {
+  background: var(--scu-red-light);
+}
+
+/* ── Listings (study groups & events) ────────────────────────────── */
+
+.listings-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-post {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--scu-red);
+  border-radius: var(--radius);
+  color: var(--scu-red);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.btn-post:hover {
+  background: var(--scu-red);
+  color: var(--scu-cream-light);
+}
+
+.listings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.listing-card {
+  background: var(--scu-gray-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color 0.15s;
+}
+
+.listing-card:hover {
+  border-color: rgba(139, 26, 26, 0.45);
+}
+
+.listing-card .card-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-details {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-details li {
+  font-size: 0.8125rem;
+  color: var(--scu-gray-mid);
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--scu-cream);
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  color: var(--scu-gray-mid);
+  line-height: 1.6;
+}
+
+/* Empty state shown when PHP has no records to display */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--scu-gray-mid);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+.empty-state p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
