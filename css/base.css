@@ -239,6 +239,17 @@ body {
   font-weight: 600;
 }
 
+/* Hero Section Logo Styling */
+.hero-logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  /* Centers the image and adds 20px of space below it */
+  height: 200px;
+  /* Makes it larger than the nav logo, but keeps it reasonable */
+  width: auto;
+  /* Prevents the image from stretching */
+}
+
 /* ── Responsive ──────────────────────────────────────────────────── */
 
 @media (max-width: 640px) {
@@ -266,3 +277,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
