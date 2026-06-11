@@ -1,30 +1,30 @@
 <?php
-// Hide notices to keep the output clean
+// Hide notices
 error_reporting(E_ALL & ~E_NOTICE);
 
 $eventsHtml = '';
 
 try {
-    // 1. Connect to the database
-    // __DIR__ gets the current folder (/php), and '/../' goes up one level to the root!
+    // Connect to the database
+    // __DIR__ gets the current folder /php. /../ goes up one level to root
     $dbPath = __DIR__ . '/../broncolink.db';
     $pdo = new PDO('sqlite:' . $dbPath);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // 2. Fetch all events, newest first (ORDER BY id DESC)
+    // Fetch all events with newest first
     $stmt = $pdo->query("SELECT * FROM events ORDER BY id DESC");
     $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // 3. Loop through the results and build the HTML string
+    // Loop through the results and build the HTML string
     if ($events && count($events) > 0) {
         foreach ($events as $event) {
-            // ALWAYS sanitize data coming out of the database to prevent XSS
+            // Didn't really need this but why not. Prevents XSS security with scripting
             $title = htmlspecialchars($event['title'] ?? '');
             $date = htmlspecialchars($event['date'] ?? '');
             $location = htmlspecialchars($event['location'] ?? '');
             $description = htmlspecialchars($event['description'] ?? '');
 
-            // Build the card exactly as Member 1 specified in the HTML comments
+            // Build the card with HTML
             $eventsHtml .= '<article class="listing-card">';
             $eventsHtml .= '  <h2 class="card-title">' . $title . '</h2>';
             $eventsHtml .= '  <ul class="card-details">';
@@ -35,15 +35,15 @@ try {
             $eventsHtml .= '</article>';
         }
     } else {
-        // Fallback message if the database is empty
-        $eventsHtml = '<p class="empty-message">No events have been posted yet. Click "Post an Event" to add one!</p>';
+        // if the database is empty
+        $eventsHtml = '<p class="empty-message">No events have been posted yet. Click "Post an Event" to add one</p>';
     }
 
 } catch (PDOException $e) {
     $eventsHtml = '<p class="error">Database Error: ' . $e->getMessage() . '</p>';
 }
 
-// 4. Load the HTML Template
+// Load the HTML Template
 if (!file_exists('views/events.html')) {
     echo 'Error: views/events.html was not found.';
     exit;
@@ -51,9 +51,9 @@ if (!file_exists('views/events.html')) {
 
 $htmlContent = file_get_contents('views/events.html');
 
-// 5. Inject our generated list of cards into the placeholder
+// Inject our generated list of cards into the placeholder
 $finalHtml = str_replace('{{EVENT_LISTINGS}}', $eventsHtml, $htmlContent);
 
-// 6. Send the final page to the browser
+// Send the final page to the browser
 echo $finalHtml;
 ?>
