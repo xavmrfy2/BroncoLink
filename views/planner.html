@@ -10,12 +10,19 @@
 </head>
 
 <body>
+
   <header class="site-header">
-    <div class="logo">
-      <span class="logo-icon" aria-hidden="true">B</span>
+    <a href="index.php?page=home" class="logo">
+      <img src="images/broncolink-logo.png" alt="BroncoLink Logo" class="nav-logo-img">
       <span class="logo-text">Bronco<span class="logo-accent">Link</span></span>
-    </div>
-    <p class="site-tagline">Dorm Room Planner</p>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.php?page=home">Home</a>
+      <a href="index.php?page=planner" class="active">Planner</a>
+      <a href="index.php?page=study">Study Groups</a>
+      <a href="index.php?page=events">Events</a>
+      <a href="index.php?page=submit">Submit</a>
+    </nav>
   </header>
 
   <main class="planner-page">
@@ -31,10 +38,7 @@
     </section>
 
     <section class="planner-canvas">
-      <h1 id="room-title">Graham Hall</h1>
-      <p id="room-subtitle">Mini Suite Double · 21' L × 16' W</p>
-
-      <div id="room-container" aria-label="Dorm room layout">
+      <div id="room-container">
         <div class="room-feature room-feature--window" aria-hidden="true"><span>Window</span></div>
         <div class="room-feature room-feature--door" aria-hidden="true"><span>Door</span></div>
 
@@ -54,13 +58,13 @@
         <div class="furniture dresser" id="dresser-b">Dresser B</div>
         <div class="furniture dresser" id="dresser">Dresser</div>
 
-        <div class="furniture closet" id="closet-a">Closet A</div>
-        <div class="furniture closet" id="closet-b">Closet B</div>
+        <div class="furniture closet" id=\"closet-a\">Closet A</div>
+        <div class="furniture closet" id=\"closet-b\">Closet B</div>
 
-        <div class="furniture armoire" id="armoire-a">Armoire A</div>
-        <div class="furniture armoire" id="armoire-b">Armoire B</div>
+        <div class="furniture armoire" id=\"armoire-a\">Armoire A</div>
+        <div class="furniture armoire" id=\"armoire-b\">Armoire B</div>
 
-        <div class="furniture vanity" id="vanity">Vanity</div>
+        <div class="furniture vanity" id=\"vanity\">Vanity</div>
       </div>
 
       <p class="scale-note">Grid: 1 square = 1 foot · Drag to move · Double-click or hover ↻ to rotate</p>
@@ -68,7 +72,10 @@
   </main>
 
   <footer class="site-footer">
-    <p>BroncoLink &copy; 2026 — Santa Clara University</p>
+    <div class="page-shell footer-shell">
+      <p>Created by: Xavier, Shreeya, and Ron</p>
+      <p>BroncoLink</p>
+    </div>
   </footer>
 
   <script src="js/planner.js"></script>

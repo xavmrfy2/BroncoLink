@@ -82,6 +82,14 @@ body {
   color: var(--scu-red);
 }
 
+.nav-logo-img {
+  height: 45px;
+  /* Adjust this number to make your logo bigger or smaller */
+  width: auto;
+  /* Keeps the logo from stretching or squishing */
+  display: block;
+}
+
 /* ── Nav ─────────────────────────────────────────────────────────── */
 
 .site-nav {
